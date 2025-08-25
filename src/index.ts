@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import db from "./utils/database";
 import docs from "./docs/route";
 import cors from "cors";
+import dotenv from "dotenv";
 
 async function init() {
   try {
@@ -15,13 +16,13 @@ async function init() {
     app.use(cors());
     app.use(bodyParser.json());
 
-    const PORT = 3000;
-
     app.use("/api", router);
     docs(app);
 
-    app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
+    app.listen(process.env.APP_PORT, () => {
+      console.log(
+        `Server is running on http://localhost:${process.env.APP_PORT}`
+      );
     });
   } catch (error) {
     console.log("DB connection error:", error);

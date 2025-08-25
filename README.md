@@ -34,7 +34,7 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstall:
 1. **Clone repository**
    ```bash
    git clone <repository-url>
-   cd notes
+   cd backend-notes
    ```
 
 2. **Install dependencies**
